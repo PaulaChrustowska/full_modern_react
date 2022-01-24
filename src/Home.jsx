@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import BlogList from './BlogList';
 
 function Home() {
-  const [blogs] = useState([
+  const [blogs, setBlogs] = useState([
     {
       title: 'Introduce', body: 'Witajcie! W naszej bajce Słoń zagra na fujarce, Pinokio nam zaśpiewa, Zatańczą wkoło drzewa. Tu wszystko jest możliwe,Zwierzęta są szczęśliwe, A dzieci, wiem coś o tym,Latają samolotem.Nikt tutaj nie zna głodu,Nikt tu nie czuje chłodu I nawet - ja nie kłamię Nikt się nie skarży mamie', author: 'Jan Brzechwa', id: 1,
     },
@@ -12,9 +12,14 @@ function Home() {
     },
   ]);
 
+  const handleDelete = (id) => {
+    const newBlogs = blogs.filter((blog) => blog.id !== id);
+    setBlogs(newBlogs);
+  };
+
   return (
     <div className="home">
-      <BlogList blogs={blogs} title="All Blogs!" greet="Hello! Welcome to our world!" />
+      <BlogList blogs={blogs} title="All Blogs!" greet="Hello! Welcome to our world!" handleDelete={handleDelete} />
       <BlogList blogs={blogs.filter((blog) => blog.author === 'Jaś Fasola')} title="John Blog" greet="Hello! Welcome to my world!" />
 
     </div>
