@@ -1,0 +1,16 @@
+{
+    "blogs": [
+        {
+            "title": "How to make the perfect cake..",
+            "author": "Jaś Fasola",
+            "body": "Banana Cake is a quick, simple and delicious spoon mix cake and best of all - a cake that always comes out! I do not remember where this recipe came from, but the taste of banana ",
+            "id": 2
+        },
+        {
+            "title": "How to survive?",
+            "body": "Fight!",
+            "author": "James Bond",
+            "id": 7
+        }
+    ]
+}
